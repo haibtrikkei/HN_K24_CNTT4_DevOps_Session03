@@ -1,0 +1,12 @@
+1. Có VPS thực hành
+2. Cài đặt firewall (UFW)
+	- Cho phép 1 số port đi qua (22/tcp, 80/tcp, 443/tcp)
+3. Cài nginx (web server)
+	- Test mặc định:  http://<IP_ADDRESS>
+	- Tạo 1 file html và đẩy lên nginx
+	- Test lại: http://<IP_ADDRESS>
+
+Thực hiện xong các nội dung 1,2,3 thì thực hiện tiếp:
+4. Cài docker lên VPS
+5. Đóng gói 1 ứng dụng Spring Boot lên docker máy local
+6. Cài GIT lên VPS

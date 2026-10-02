@@ -1,0 +1,37 @@
+Bước 1 — Cài đặt Nginx trên Ubuntu Server
+
+sudo apt update && apt -y upgrade
+
+sudo apt install nginx -y
+
+
+Bước 2 — Quản lý dịch vụ Nginx bằng systemctl
+
+sudo systemctl status nginx
+
+# Khởi động dịch vụ Nginx
+sudo systemctl start nginx
+ 
+# Dừng dịch vụ Nginx
+sudo systemctl stop nginx
+ 
+# Khởi động lại dịch vụ Nginx (ngắt kết nối cũ và nạp lại cấu hình)
+sudo systemctl restart nginx
+ 
+# Reload lại cấu hình Nginx (áp dụng cấu hình mới mà không làm gián đoạn kết nối hiện tại)
+sudo systemctl reload nginx
+ 
+# Cho phép Nginx tự động khởi động cùng hệ điều hành
+sudo systemctl enable nginx
+
+
+Bước 3 — Cấu hình tường lửa UFW cho phép lưu lượng HTTP/HTTPS
+
+sudo ufw app list
+//Đầu ra sẽ hiển thị các profile: Nginx HTTP, Nginx HTTPS, Nginx Full.
+
+sudo ufw allow 'Nginx Full'
+//Hãy chọn cho phép Nginx Full (mở cả cổng 80 và cổng 443)
+
+sudo ufw status
+//Kiểm tra lại trạng thái UFW
